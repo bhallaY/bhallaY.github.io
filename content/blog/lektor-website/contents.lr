@@ -1,0 +1,18 @@
+title: Building this blog
+---
+pub_date: 2019-06-17
+---
+author:
+
+Yash Bhalla
+
+---
+summary:
+
+This blog post is to review my experience using [Lektor](https://www.getlektor.com) to create this website. 
+
+---
+body:
+
+This blog post is to review my experience using [Lektor](https://www.getlektor.com) to create this website. 
+Documentation is relatively good. Though some parts for me were confusing. This could be because I am new to building a website using a static generator and CMS like Lektor. For example: In the [Data Modeling](https://www.getlektor.com/docs/models/) under _Model Options_ and _inherits_, it says that models can inherit from all Model Options Settings from another model. Using this, I wanted the 'page' model to be the 'root' of all other models. Though when referencing which model to inherit, the 'name' is ambiguous, the ID of a model is from the file name, whereas there is an actual name field for a model. The docs make it seem the name field of the other model should be how to reference which model to inherit from, however it is the name of the file that actually is required. 
