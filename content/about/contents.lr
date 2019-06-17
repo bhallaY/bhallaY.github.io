@@ -1,7 +1,7 @@
-title: About this Website
+title: Purpose of this Website
 ---
 body:
 
-This is a website that was made with the Lektor quickstart.
-
-And it does not contain a lot of information.
+This website is to document my projects and share my thoughts. 
+---
+_discoverable: yes
