@@ -13,8 +13,12 @@
       <div class= "collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
         <!-- == is not an error. It is the logical equals sign. -->
-        <li class="nav-item" {% if this._path == '/' %} class="active"{% endif
-          %}><a class="nav-link" href="{{ '/'|url }}">Home</a></li>
+        <li {% if this._path == '/' %} 
+                class="nav-item active" 
+            {% else %} 
+                class="nav-item"
+            {% endif %}>
+        <a class="nav-link" href="{{ '/'|url }}">Home</a></li>
         {% for href, title in [
           ['/blog', 'Blog'],
           ['/projects', 'Projects'],
