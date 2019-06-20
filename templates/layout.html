@@ -8,7 +8,6 @@
 <title>{% block title %}Welcome{% endblock %} — yash_blog</title>
 <body>
   <header>
-    <h1>Yash Bhalla</h1>
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
       <div class= "collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
@@ -18,14 +17,20 @@
             {% else %} 
                 class="nav-item"
             {% endif %}>
-        <a class="nav-link" href="{{ '/'|url }}">Home</a></li>
+        <a class="nav-link" href="{{ '/'|url }}">Home</a>
+      </li>
         {% for href, title in [
           ['/blog', 'Blog'],
           ['/projects', 'Projects'],
           ['/book_reviews', 'Book Reviews'],
         ] %}
-          <li class="nav-item" {% if this.is_child_of(href) %} class="active"{% endif
-            %}><a class="nav-link" href="{{ href|url }}">{{ title }}</a></li>
+          <li {% if this.is_child_of(href) %} 
+                  class="nav-item active"
+              {% else %}
+                  class="nav-item"
+              {% endif %}>
+              <a class="nav-link" href="{{ href|url }}">{{ title }}</a>
+          </li>
         {% endfor %}
       </ul>
     </div>
