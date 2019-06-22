@@ -1,51 +1,78 @@
 <!doctype html>
-<html lang='en'> 
+<html lang='en'>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 <!-- <link rel="stylesheet" href="{{ '/static/style.css'|url }}"> -->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"
+  type="text/css">
+
 <title>{% block title %}Welcome{% endblock %} — yash_blog</title>
+
 <body>
   <header>
-    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-      <div class= "collapse navbar-collapse" id="navbarNav">
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark navbar-collapse">
+      <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
-        <!-- == is not an error. It is the logical equals sign. -->
-        <li {% if this._path == '/' %} 
-                class="nav-item active" 
-            {% else %} 
-                class="nav-item"
-            {% endif %}>
-        <a class="nav-link" href="{{ '/'|url }}">Home</a>
-      </li>
-        {% for href, title in [
+          <!-- == is not an error. It is the logical equals sign. -->
+          <li {% if this._path == '/' %} class="nav-item active" {% else %} class="nav-item" {% endif %}>
+            <a class="nav-link" href="{{ '/'|url }}">Home</a>
+          </li>
+          {% for href, title in [
           ['/blog', 'Blog'],
           ['/projects', 'Projects'],
           ['/book_reviews', 'Book Reviews'],
         ] %}
-          <li {% if this.is_child_of(href) %} 
-                  class="nav-item active"
-              {% else %}
-                  class="nav-item"
-              {% endif %}>
-              <a class="nav-link" href="{{ href|url }}">{{ title }}</a>
+          <li {% if this.is_child_of(href) %} class="nav-item active" {% else %} class="nav-item" {% endif %}>
+            <a class="nav-link" href="{{ href|url }}">{{ title }}</a>
           </li>
-        {% endfor %}
-      </ul>
-    </div>
+          {% endfor %}
+        </ul>
+      </div>
     </nav>
   </header>
-  <div class="page">
+  <div class="page" style="text-align: center">
     <!-- Child Template block -->
     {% block body %}{% endblock %}
   </div>
-  <footer>
-    &copy; Copyright 2019 by Yash Bhalla.
-  </footer>
+  <nav class="navbar navbar-expand-sm navbar-light fixed-bottom bg-light">
+    <footer class="footer">
+      <!-- Social Element Icons -->
+      <ul class="nav navbar-nav navbar-collapse">
+        <li class="list-inline-item">
+          <a href="https://github.com/bhallaY" title="@bhallaY on GitHub" rel="external">
+            <i class="fa fa-2x fa-github"></i>
+            Code!
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a href="https://www.linkedin.com/in/yashbhalla636a55126" title="Yash Bhalla on Linkedin" rel="external">
+            <i class="fa fa-2x fa-linkedin"></i>
+            Professional
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a href="mailto:bhalla.yash98@gmail.com" title="Email: bhalla.yash98@gmail.com" rel="external"
+            class="u-email">
+            <i class="fa fa-2x fa-paper-plane"></i>
+            Contact
+          </a>
+        </li>
+      </ul>
+    </footer>
+  </nav>
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
 </body>
+
 </html>
