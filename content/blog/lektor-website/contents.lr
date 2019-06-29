@@ -25,10 +25,23 @@ Before I discuss what I like and dislike about Lektor, I wanted to provide my un
 In general, I did not have a hard time learning how to use Lektor. It also helps that (for now) I am not using any of its fancy/more complex features. I want to highlight the positives of my experience here. 
 
 **Thorough Documentation:**  In general, I really like the documentation found in the Python ecosystem. It is quite thorough and seems well maintained. Lektor follows this (it is written in Python and Node.js). I was able to learn the concepts of Lektor quickly because of this. The [Lektor website](https://www.getlektor.com) makes this easily accessible. The website contains lots of code samples, showing how the different aspects of Lektor work. It is also quite useful that the Lektor website is written using Lektor and shares its source code. 
+
 **Intuitive Design:** Lektor's basic concepts are intuitive. I like the model, content, view split it uses (I do not know if this is standard of static website generators).  The modularity makes it easy to selectively update aspects of the website. 
+
 **Optional CMS interface and Server:** Sometimes I do like working directly with the underlying files, as I can write (type) quicker this way. Additionally, it is clear when I need to update (or create a new) model for a specific content page. Other times, I like the admin interface Lektor provides. It is a convenient way to write, as I do not have to bother with the underlying file/folder structure. Overall, I like the option of both. Plus, Lektor comes with a great server that rebuilds the website quickly when I make edits, so I can see how my edits will look. 
 
 #### The Bad
-There were a few aspects of Lektor that I found I did not like. 
+There are some downsides in using Lektor. I think these are mostly minor, and likely stem from my own naiveté rather than the framework. 
 
-### Final Thoughts 
+**Everything depends on file names:** I did not like this aspect of Lektor. You have to refer to the model by the file name it is in. You have to have a corresponding file in view that has the same name (with different extension) as a model. Additionally, the content lives in nested folders, describing where it can live on the website. I am not sure how standard this design choice is, but I hope there is a better way out there. 
+
+**Lots of setup work:** Lektor does provide a quick start option and have some templates for common uses (such as building a blog). However, even with this, it seemed like there is a lot of initial set up work. It was a lot of initial work with deciding upon the initial model choices and changing the layout choices from the quick start defaults. 
+
+### Final Thoughts
+I think using Lektor was the right choice. It provides a lot of flexibility and introduces me to one way in creating a static website. Another potential positive is that it allows for custom plugins, and since it is written in Python, I could conceivably create a plugin if I ever need a feature that is not already in the framework.
+
+I do have one last gripe with Lektor. While setting up the 'Book Reviews' section of this site, I ran into what I thought was a bug with Lektor. The admin interface would not automatically select the 'Book Review' model I created, and I did follow the instructions on how to make the interface pick a model. I discovered (after too long), that it was a user error and I had specified the model inheritance incorrectly. I called the base 'Book Review' landing page a different model that the one I needed. 
+
+In the end, I am quite excited to start writing about what I am doing. I hope it will continue to have the benefits I saw when co-writing about my co-op project. 
+
+
