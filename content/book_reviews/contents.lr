@@ -2,4 +2,10 @@ _model: book-reviews
 ---
 title: Book Reviews
 ---
-body: This a collection of books I have read and my thoughts on them. 
+body:
+
+This a collection of books I have read and my thoughts on them. 
+---
+book:
+
+STAT Health Tech Ebook 
