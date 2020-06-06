@@ -1,6 +1,7 @@
-title: Welcome to yash_blog!
+title: Welcome to Yash Bhalla's website!
 ---
 body:
 
-This is a basic demo website that shows how to use Lektor for a basic
-website with some pages and a blog.
+Hi, I'm Yash. I am a computer science and biology student at Northeastern University. I've become motivated to start writing about the books I read and the various large and small coding things I do. You can learn more about me by browsing through this website! 
+
+(For anyone interested, I built this website using [Lektor](https://www.getlektor.com) and [Bootstrap](https://www.getbootstrap.com))

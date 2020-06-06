@@ -1,0 +1,47 @@
+title: Building this blog
+---
+pub_date: 2019-06-28
+---
+author:
+
+Yash Bhalla
+
+---
+summary:
+
+In this blog post, I want to share my experience using [Lektor](https://www.getlektor.com). 
+---
+body:
+
+### Introduction
+I was encouraged to create a blog by my former boss when I was on co-op as a Data Scientist intern at [NIBR](https://www.novartis.com/our-science/novartis-institutes-biomedical-research). Up until that point, I did not see the use in having my own blog. It seemed like a thing that was trendy a while ago, but now with social media, not so much. I held onto this opinion until I had to co-write a small paper describing the project I was working on for an interested party at NIBR. From this writing experience, I finally saw the benefits in formally writing about what I was coding. It definitely makes sharing my work easier and makes what I am doing clearer in my own head. Additionally, I think it will be a useful way to keep a record of what I am working on at various times. 
+
+For this first post, I am going to discuss my initial experience in creating this site with Lektor. I decided to use this tool because my former boss (same one as above) suggested it. He had created a personal website using it, and since he was right about the benefits that formal writing can bring to coding, I decided to listen to him again. 
+
+### Lektor
+Before I discuss what I like and dislike about Lektor, I wanted to provide my understanding of Lektor and the features of it I used. From what I can tell, Lektor tries to be as customizable as possible. Since it is a content management system (CMS) and a static website generator, I get the choice of creating posts from my favorite editor (working with the underlying text files) or the provided admin interface. It also separates responsibilities into three sections: model, content, and view. The model describes the fields that can be filled out for each content page. Multiple models can exist; I have created several. Each model describes the fields and types of information that could be useful in different content pages. The content section is where you create files (called pages) that hold the information on each page. Each content page has one model that describes the fields it contains. When you work with the admin interface, these fields show up distinctly so it is easy to fill them out. When working with the underlying text files, you have to specify the field you are filling out. The view, called a layout, describes how you want the content to look when the webpage is created. The view uses Jinja2 templating and is the HTML layout of the page. *Overall, everything is pretty intuitive*. Lektor does have other sections and concepts, but currently I do not use them. If I do in the future, I will write another blog post!  
+
+#### The Good 
+In general, I did not have a hard time learning how to use Lektor. It also helps that (for now) I am not using any of its fancy/more complex features. I want to highlight the positives of my experience here. 
+
+**Thorough Documentation:**  In general, I really like the documentation found in the Python ecosystem. It is quite thorough and seems well maintained. Lektor follows this (it is written in Python and Node.js). I was able to learn the concepts of Lektor quickly because of this. The [Lektor website](https://www.getlektor.com) makes this easily accessible. The website contains lots of code samples, showing how the different aspects of Lektor work. It is also quite useful that the Lektor website is written using Lektor and shares its source code. 
+
+**Intuitive Design:** Lektor's basic concepts are intuitive. I like the model, content, view split it uses (I do not know if this is standard of static website generators).  The modularity makes it easy to selectively update aspects of the website. 
+
+**Optional CMS interface and Server:** Sometimes I do like working directly with the underlying files, as I can write (type) quicker this way. Additionally, it is clear when I need to update (or create a new) model for a specific content page. Other times, I like the admin interface Lektor provides. It is a convenient way to write, as I do not have to bother with the underlying file/folder structure. Overall, I like the option of both. Plus, Lektor comes with a great server that rebuilds the website quickly when I make edits, so I can see how my edits will look. 
+
+#### The Bad
+There are some downsides in using Lektor. I think these are mostly minor, and likely stem from my own naiveté rather than the framework. 
+
+**Everything depends on file names:** I did not like this aspect of Lektor. You have to refer to the model by the file name it is in. You have to have a corresponding file in view that has the same name (with different extension) as a model. Additionally, the content lives in nested folders, describing where it can live on the website. I am not sure how standard this design choice is, but I hope there is a better way out there. 
+
+**Lots of setup work:** Lektor does provide a quick start option and have some templates for common uses (such as building a blog). However, even with this, it seemed like there is a lot of initial set up work. It was a lot of initial work with deciding upon the initial model choices and changing the layout choices from the quick start defaults. 
+
+### Final Thoughts
+I think using Lektor was the right choice. It provides a lot of flexibility and introduces me to one way in creating a static website. Another potential positive is that it allows for custom plugins, and since it is written in Python, I could conceivably create a plugin if I ever need a feature that is not already in the framework.
+
+I do have one last gripe with Lektor. While setting up the 'Book Reviews' section of this site, I ran into what I thought was a bug with Lektor. The admin interface would not automatically select the 'Book Review' model I created, and I did follow the instructions on how to make the interface pick a model. I discovered (after too long), that it was a user error and I had specified the model inheritance incorrectly. I called the base 'Book Review' landing page a different model that the one I needed. 
+
+In the end, I am quite excited to start writing about what I am doing. I hope it will continue to have the benefits I saw when co-writing about my co-op project. 
+
+
