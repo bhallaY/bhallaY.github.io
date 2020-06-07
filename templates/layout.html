@@ -20,11 +20,7 @@
           <li {% if this._path == '/' %} class="nav-item active" {% else %} class="nav-item" {% endif %}>
             <a class="nav-link" href="{{ '/'|url }}">Home</a>
           </li>
-          {% for href, title in [
-          ['/blog', 'Blog'],
-          ['/projects', 'Projects'],
-          ['/book_reviews', 'Book Reviews'],
-        ] %}
+          {% for href, title in bag('nav').items() %}
           <li {% if this.is_child_of(href) %} class="nav-item active" {% else %} class="nav-item" {% endif %}>
             <a class="nav-link" href="{{ href|url }}">{{ title }}</a>
           </li>
