@@ -1,5 +1,7 @@
 [project]
 name = bhallaY.github.io
+url = https://bhallay.github.io
+
 
 [servers.ghpages]
 target = ghpages+https://bhallaY/bhallaY.github.io
