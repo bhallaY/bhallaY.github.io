@@ -13,57 +13,64 @@
     <title>{% block title %}{% endblock %} </title>
   </head>
 
-<title>{% block title %}Welcome{% endblock %} — yash_blog</title>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav">
+            <!-- == is not an error. It is the logical equals sign. -->
+            <li {% if this._path == '/' %} class="nav-item active" {% else %} class="nav-item" {% endif %}>
+              <a class="nav-link" href="{{ '/'|url }}">Home</a>
+            </li>
+            {% for href, title in bag('nav').items() %}
+            <li {% if this.is_child_of(href) %} class="nav-item active" {% else %} class="nav-item" {% endif %}>
+              <a class="nav-link" href="{{ href|url }}">{{ title }}</a>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <div class="page" style="text-align: justify">
+      <!-- Child Template block -->
+      {% block body %}{% endblock %}
+    </div>
 
-<body>
-  <header>
-    <nav class="navbar navbar-expand-sm navbar-dark bg-dark navbar-collapse">
-      <div class="navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <!-- == is not an error. It is the logical equals sign. -->
-          <li {% if this._path == '/' %} class="nav-item active" {% else %} class="nav-item" {% endif %}>
-            <a class="nav-link" href="{{ '/'|url }}">Home</a>
-          </li>
-          {% for href, title in bag('nav').items() %}
-          <li {% if this.is_child_of(href) %} class="nav-item active" {% else %} class="nav-item" {% endif %}>
-            <a class="nav-link" href="{{ href|url }}">{{ title }}</a>
-          </li>
-          {% endfor %}
-        </ul>
-      </div>
-    </nav>
-  </header>
-  <div class="page" style="text-align: justify">
-    <!-- Child Template block -->
-    {% block body %}{% endblock %}
-  </div>
-  <nav class="navbar navbar-expand-sm navbar-light fixed-bottom bg-light">
+
     <footer class="footer">
-      <!-- Social Element Icons -->
-      <ul class="nav navbar-nav navbar-collapse">
-        <li class="list-inline-item">
-          <a href="https://github.com/bhallaY" title="@bhallaY on GitHub" rel="external">
-            <i class="fa fa-2x fa-github"></i>
-            Code!
-          </a>
-        </li>
-        <li class="list-inline-item">
-          <a href="https://www.linkedin.com/in/yashbhalla636a55126" title="Yash Bhalla on Linkedin" rel="external">
-            <i class="fa fa-2x fa-linkedin"></i>
-            Professional
-          </a>
-        </li>
-        <li class="list-inline-item">
-          <a href="mailto:bhalla.yash98@gmail.com" title="Email: bhalla.yash98@gmail.com" rel="external"
-            class="u-email">
-            <i class="fa fa-2x fa-paper-plane"></i>
-            Contact
-          </a>
-        </li>
-      </ul>
+      <nav class="navbar navbar-expand-sm navbar-light fixed-bottom bg-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Social Element Icons -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+            <li class="list-inline-item">
+              <a href="https://github.com/bhallaY" title="@bhallaY on GitHub" rel="external">
+                <i class="fa fa-2x fa-github"></i>
+                Code!
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://www.linkedin.com/in/yashbhalla636a55126" title="Yash Bhalla on Linkedin" rel="external">
+                <i class="fa fa-2x fa-linkedin"></i>
+                Professional
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="mailto:bhalla.yash98@gmail.com" title="Email: bhalla.yash98@gmail.com" rel="external"
+                class="u-email">
+                <i class="fa fa-2x fa-paper-plane"></i>
+                Contact
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
     </footer>
-  </nav>
-
   
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" 
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
