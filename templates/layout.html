@@ -51,15 +51,15 @@
 
     <footer class="footer">
       <nav class="navbar navbar-expand-sm navbar-dark fixed-bottom bg-dark">
-        <div class="mx-auto d-sm-flex flex-md-nowrap">
+        <div class="mx-auto d-md-flex flex-md-nowrap">
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#footer-elements" aria-controls="footer-elements" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <!-- Social Element Icons -->
-          <div class="collapse navbar-collapse text-center" id="footer-elements">
+          <div class="collapse navbar-collapse" id="footer-elements">
             <ul class="navbar-nav">
               {% for contact in bag('nav')['footer'] %}
-                <li class="nav-item">
+                <li class="list-inline-item">
                   <a href="{{ contact['href'] }}" title="{{ contact['title'] }}" rel="external">
                     <i class="{{ contact['icon'] }}"></i>
                   </a>
