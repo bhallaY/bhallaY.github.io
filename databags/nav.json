@@ -1,0 +1,33 @@
+{
+    "header": [
+        {
+            "title": "Blog",
+            "href": "/blog"
+        },
+        {
+            "title": "Projects",
+            "href": "/projects"
+        },
+        {
+            "title": "Book Reviews",
+            "href": "/book_reviews"
+        }
+    ],
+    "footer": [
+        {
+            "title": "@bhallaY on GitHub",
+            "href": "https://github.com/bhallaY",
+            "icon": "fa fa-2x fa-github"
+        },
+        {
+            "title": "Yash Bhalla on Linkedin",
+            "href": "https://www.linkedin.com/in/yashbhalla636a55126",
+            "icon": "fa fa-2x fa-linkedin"
+        },
+        {
+            "title": "Email me!",
+            "href": "mailto:bhalla.yash98@gmail.com",
+            "icon": "fa fa-2x fa-paper-plane"
+        }
+    ]
+}
