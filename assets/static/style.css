@@ -17,6 +17,7 @@ div.blog-metadata {
 
 .page {
     margin: 2%;
+    margin-bottom: 5%;
 }
 
 .text-custom {
@@ -34,4 +35,3 @@ div.blog-metadata {
 .fa-element:hover {
     color: rgb(83, 178, 255) !important;
 }
-
