@@ -16,6 +16,7 @@
     <!-- add your own style -->
     <link rel="stylesheet" href="{{ '/static/style.css'|asseturl }}">
 
+    <!-- Different title per page -->
     <title>{% block title %}{% endblock %} </title>
   </head>
 
@@ -47,7 +48,7 @@
         </div>
       </nav>
     </header>
-    <div class="page" style="text-align: justify">
+    <div class="page">
       <!-- Child Template block -->
       {% block body %}{% endblock %}
     </div>
