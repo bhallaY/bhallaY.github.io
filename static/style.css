@@ -10,6 +10,8 @@ body {
 div.card {
     background: #e0dfdd;
     color: #1F2833;
+    padding: 0.25em;
+    margin-bottom: 2%;
 }
 
 div.blog-metadata {
