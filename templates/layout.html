@@ -20,7 +20,7 @@
     <title>{% block title %}{% endblock %} </title>
   </head>
 
-  <body>
+  <body class="d-flex flex-column min-vh-100">
     <header>
       <nav class="navbar navbar-collapse navbar-expand-md navbar-dark bg-dark">
         <div class="container-fluid">
@@ -54,9 +54,10 @@
     </div>
 
 
-    <footer class="page-footer footer">
-      <nav class="navbar navbar-collapse navbar-expand-md navbar-dark bg-dark fixed-bottom">
+    <footer class="page-footer footer mt-auto">
+      <nav class="navbar navbar-collapse navbar-expand-md navbar-dark bg-dark">
         <!-- out of div tag to align left when collapsed -->
+        <div class="container-fluid">
         <button class="navbar-toggler text-left" type="button" data-toggle="collapse" data-target="#footer-elements" aria-controls="footer-elements" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -74,6 +75,7 @@
             </ul>
           </div>
         </div>
+      </div>
       </nav>
     </footer>
 
