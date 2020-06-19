@@ -62,6 +62,7 @@
       {{ post.body.html|escape()|truncate(255, False) }}...
     </p>
     {% endif %}
+    <a href="{{ post|url }}" class="stretched-link"></a>
   </div>
 </div>
 {% endmacro %}
