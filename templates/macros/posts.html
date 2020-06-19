@@ -53,6 +53,13 @@
       {{ render_book_review_metadata(post, from_index=True) }}
     {% endif %}
 
+    {% if post.summary %}
+    <p class="card-text">{{post.summary}}</p>
+    {% else %}
+    <p class="card-text">
+      {{ post.body.html|escape()|truncate(255, False) }}...
+    </p>
+    {% endif %}
   </div>
 </div>
 {% endmacro %}
