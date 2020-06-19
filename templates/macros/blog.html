@@ -5,6 +5,7 @@
   {% else %}
     <h2>{{ post.title }}</h2>
   {% endif %}
+
   <p class="meta">
     {% if book_author %}
       Book Author: {{ post.author }}
@@ -16,3 +17,46 @@
   </p>
   </div>
 {% endmacro %}
+
+{% macro render_blog_metadata(post, from_index=false) %}
+<div class="blog-metadata">
+  {% if from_index %}
+    <h4><a href="{{ post|url }}">{{ post.title }}</a></h4>
+  {% else %}
+    <h2>{{ post.title }}</h2>
+  {% endif %}
+
+  <p>
+    Author: {{ post.author }}   |   
+    Date written: {{ post.pub_date }}
+  </p>
+</div>
+{% endmacro %}
+
+{% macro render_post(post, from_index=false, type="blog") %}
+<div class="post">
+  {% if type == "blog" %}
+    {{ render_blog_metadata(post, from_index) }}
+  {% elif type == "book_review" %}
+    {{ render_book_review_metadata(post, from_index) }}
+  {% endif %}
+
+  {{ post.body }}
+</div>
+{% endmacro %}
+
+{% macro render_blog_intro(post) %}
+<div class="card">
+  <div class="card-body">
+    {{ render_blog_metadata(post, from_index=True) }}
+    {% if post.summary %}
+    <p class="card-text">{{post.summary}}</p>
+    {% else %}
+    <p class="card-text">
+      {{ post.body.html|escape()|truncate(255, False) }}
+    </p>
+    {% endif %}
+  </div>
+</div>
+{% endmacro %}
+
