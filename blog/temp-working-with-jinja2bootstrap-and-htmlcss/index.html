@@ -14,7 +14,7 @@
       type="text/css">
     
     <!-- add your own style -->
-    <link rel="stylesheet" href="../../static/style.css?h=0caa171b">
+    <link rel="stylesheet" href="../../static/style.css?h=8dc99af6">
 
     <!-- Different title per page -->
     <title>Working with Jinja2/Bootstrap and HTML/CSS </title>
@@ -28,28 +28,28 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse justify-content-stretch" id="navbarSupportedContent">
-            <ul class="navbar-nav">
+            <ul class="navbar-nav nav">
               <!-- == is not an error. It is the logical equals sign. -->
               <li  class="nav-item" >
-                <a class="nav-link" href="../../">Home</a>
+                <a class="nav-link text-custom" href="../../">Home</a>
               </li>
               
               <li  class="nav-item active" >
-                <a class="nav-link" href="/blog">Blog</a>
+                <a class="nav-link text-custom" href="/blog">Blog</a>
               </li>
               
               <li  class="nav-item" >
-                <a class="nav-link" href="/projects">Projects</a>
+                <a class="nav-link text-custom" href="/projects">Projects</a>
               </li>
               
               <li  class="nav-item" >
-                <a class="nav-link" href="/book_reviews">Book Reviews</a>
+                <a class="nav-link text-custom" href="/book_reviews">Book Reviews</a>
               </li>
               
             </ul>
             <ul class="navbar-nav ml-auto">
               <li class="nav-item" id="theme-toggle" onclick="modeSwitcher()">
-                <a class="nav-link" href="../../blog/temp-working-with-jinja2bootstrap-and-htmlcss/" id="theme-toggle" onclick="modeSwitcher()">Dark Mode</a>
+                <a class="nav-link text-custom" href="../../blog/temp-working-with-jinja2bootstrap-and-htmlcss/" id="theme-toggle" onclick="modeSwitcher()">Dark Mode</a>
               </li>
             </ul>
           </div>
@@ -84,37 +84,39 @@
     </div>
 
 
-    <footer class="footer">
-      <nav class="navbar navbar-expand-sm navbar-dark fixed-bottom bg-dark">
-        <!-- out of div tag to align left when collapsed -->
-        <button class="navbar-toggler text-left" type="button" data-toggle="collapse" data-target="#footer-elements" aria-controls="footer-elements" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="mx-auto d-md-flex flex-md-nowrap">
-          <!-- Social Element Icons -->
-          <div class="collapse navbar-collapse" id="footer-elements">
-            <ul class="navbar-nav">
-              
-                <li class="list-inline-item">
-                  <a href="https://github.com/bhallaY" title="@bhallaY on GitHub" rel="external">
-                    <i class="fa fa-2x fa-github"></i>
-                  </a>
-                </li>
-              
-                <li class="list-inline-item">
-                  <a href="https://www.linkedin.com/in/yashbhalla636a55126" title="Yash Bhalla on Linkedin" rel="external">
-                    <i class="fa fa-2x fa-linkedin"></i>
-                  </a>
-                </li>
-              
-                <li class="list-inline-item">
-                  <a href="mailto:bhalla.yash98@gmail.com" title="Email me!" rel="external">
-                    <i class="fa fa-2x fa-paper-plane"></i>
-                  </a>
-                </li>
-              
-            </ul>
-          </div>
+    <footer class="page-footer footer">
+      <!-- <div class="container-fluid"> -->
+        <nav class="navbar navbar-collapse navbar-expand-md navbar-dark bg-dark">
+          <!-- out of div tag to align left when collapsed -->
+          <button class="navbar-toggler text-left" type="button" data-toggle="collapse" data-target="#footer-elements" aria-controls="footer-elements" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="mx-auto justify-content-stretch">
+            <!-- Social Element Icons -->
+            <div class="collapse navbar-collapse" id="footer-elements">
+              <ul class="navbar-nav">
+                
+                  <li class="list-inline-item">
+                    <a href="https://github.com/bhallaY" title="@bhallaY on GitHub" rel="external">
+                      <i class="fa fa-2x fa-github fa-element"></i>
+                    </a>
+                  </li>
+                
+                  <li class="list-inline-item">
+                    <a href="https://www.linkedin.com/in/yashbhalla636a55126" title="Yash Bhalla on Linkedin" rel="external">
+                      <i class="fa fa-2x fa-linkedin fa-element"></i>
+                    </a>
+                  </li>
+                
+                  <li class="list-inline-item">
+                    <a href="mailto:bhalla.yash98@gmail.com" title="Email me!" rel="external">
+                      <i class="fa fa-2x fa-paper-plane fa-element"></i>
+                    </a>
+                  </li>
+                
+              </ul>
+            </div>
+          <!-- </div> -->
         </div>
       </nav>
     </footer>

@@ -3,10 +3,6 @@ html body{
     background: #E3E2DF;
 }
 
-body {
-    margin: auto
-}
-
 div.card {
     background: #e0dfdd;
     color: #1F2833;
@@ -22,3 +18,20 @@ div.blog-metadata {
 .page {
     margin: 2%;
 }
+
+.text-custom {
+    color: rgb(36, 156, 255) !important;
+}
+
+.text-custom:hover,  .text-custom:active{
+    color: rgb(83, 178, 255) !important;
+}
+
+.fa-element {
+    color: rgb(36, 156, 255) !important;
+}
+
+.fa-element:hover {
+    color: rgb(83, 178, 255) !important;
+}
+
