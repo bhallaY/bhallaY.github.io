@@ -43,3 +43,17 @@
   {{ post.body }}
 </div>
 {% endmacro %}
+
+{% macro render_intro(post, type) %}
+<div class="card">
+  <div class="card-body">
+    {% if type == "blog" %}
+      {{ render_blog_metadata(post, from_index=True) }}
+    {% elif type == "book_review" %}
+      {{ render_book_review_metadata(post, from_index=True) }}
+    {% endif %}
+
+  </div>
+</div>
+{% endmacro %}
+
