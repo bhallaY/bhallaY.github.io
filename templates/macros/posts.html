@@ -31,3 +31,15 @@
   </p>
 </div>
 {% endmacro %}
+
+{% macro render_post(post, type, from_index=false) %}
+<div class="post">
+  {% if type == "blog" %}
+    {{ render_blog_metadata(post, from_index) }}
+  {% elif type == "book_review" %}
+    {{ render_book_review_metadata(post, from_index) }}
+  {% endif %}
+
+  {{ post.body }}
+</div>
+{% endmacro %}
