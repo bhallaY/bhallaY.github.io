@@ -35,3 +35,8 @@ div.blog-metadata {
 .fa-element:hover {
     color: rgb(83, 178, 255) !important;
 }
+
+.card {
+    margin: 1%;
+    padding-top: -1%;
+}
