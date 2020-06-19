@@ -3,6 +3,19 @@ html body{
     background: #E3E2DF;
 }
 
-nav {
-    color: red;
+body {
+    margin: auto
+}
+
+div.card {
+    background: #e0dfdd;
+    color: #1F2833;
+}
+
+div.blog-metadata {
+    color: #2F4F4F;
+}
+
+.page {
+    margin: 2%;
 }
