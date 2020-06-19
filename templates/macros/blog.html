@@ -13,7 +13,7 @@
       Author: {{post.author}}
     {% endif %}
     <br>
-    Date written: {{ post.pub_date}}
+    Date written: {{ post.pub_date }}
   </p>
   </div>
 {% endmacro %}
@@ -21,7 +21,7 @@
 {% macro render_blog_metadata(post, from_index=false) %}
 <div class="blog-metadata">
   {% if from_index %}
-    <h4><a href="{{ post|url }}">{{ post.title }}</a></h4>
+    <h2><a href="{{ post|url }}">{{ post.title }}</a></h2>
   {% else %}
     <h2>{{ post.title }}</h2>
   {% endif %}
