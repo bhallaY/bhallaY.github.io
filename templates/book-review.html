@@ -3,4 +3,9 @@
 {% block title %}{{ this.title }}{% endblock %}
 {% block body %}
   {{ render_post(this, "book_review") }}
+  <a class="thumbnail">
+    {% for image in this.attachments.images %}
+      <img class="card-img img-fluid" src="{{ image.thumbnail(1540, 540, quality=40)| url }}" alt="Cover of {{ this.title}}"> 
+    {% endfor %}
+  </a>
 {% endblock %}

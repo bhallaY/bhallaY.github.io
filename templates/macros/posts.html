@@ -52,6 +52,11 @@
     {% if type == "blog" %}
       {{ render_blog_metadata(post, from_index=True) }}
     {% elif type == "book_review" %}
+    <a class="thumbnail">
+      {% for image in post.attachments.images %}
+        <img class="card-img img-fluid" src="{{ image|url }}" alt="Cover of {{ post.title}}"> 
+      {% endfor %}
+      </a>
       {{ render_book_review_metadata(post, from_index=True) }}
     {% endif %}
 
