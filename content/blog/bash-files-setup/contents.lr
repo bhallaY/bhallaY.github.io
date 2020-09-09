@@ -1,0 +1,41 @@
+title: Bash Files setup
+---
+author: Yash Bhalla
+---
+pub_date: 2020-09-08
+---
+summary:
+
+Bash is confusing. I recently went to the docs for Docker, found out about bash-completion (mind blown), and realized I didn't know the difference between `~/.bash_profile` and `~/.bashrc` and when/why to put commands in one or the other. This is what I found out.  
+---
+body:
+
+### Background
+Recently, I have wanted to explore what Docker has to offer. I have used it before with simple Dockerfiles and know about containers, but I had never really done a deep dive. About five minutes in, I read about how to add docker completion to the bash shell. This led me to realize I don't know much about Bash, except that it's a Unix shell and how to run basic commands in it. I didn't know about `bash-completion`, and it seems like a **very** useful tool. I came to the conclusion that it is worth exploring Bash further and trying to customize it to help me work more efficiently. To that effect, I am starting with the basics: exploring the differences between the config files `~/.bash_profile` and `~/.bashrc`. 
+
+### Motivating Question
+What are the differences between `~/.bash_profile` and `~/.bashrc`? How does that affect where to put $PATH variables, keyboard shortcuts, other bash related files (as in files containing bash aliases) and any other config related to bash?
+
+### Personal Context 
+I use Bash because it was the default shell when I got my laptop (circa 2014). It seems one can learn as much (or little) as they want to develop software, and I chose to just learn the basics for my shell until now. When looking through my `~/.bash_profile` and `~/.bashrc` files I realized they are a mess and I didn't know how to clean them up. Luckily, the docs were good, and other engineers had translated them into more digestible lingo.
+
+### Config Files
+Bash can be run a few different ways, or modes. It can be interactive or not, and logged in or not. I think a lot of the particulars stem from the time period the shell was developed and these design decisions have just stayed. Anyways, interactive mode means that the shell can read and write to a user's terminal and non interactive is not associated with a terminal. Logged in mode  means that you put your user credentials and are signed in with user ID. Having a Mac, I didn't realize a shell could be run without being logged in (Terminal.app starts a logged in interactive shell every time). The different modes have different starting config files they run. A logged in shell, interactive or not first executes `/etc/profile` (global shell specific config) if it exists and then looks for a `.bash_profile` (and if not exist, then a `~/.bash_login` and a `~/.profile`).  An interactive non-login shell executes a `~/.bashrc`. I bet a non-interactive non-login shell does too, but I couldn't find a mention of that, though it is used mainly to execute bash scripts. 
+
+### My Practices
+Currently, I do nothing that I believe needs to take advantage of the different bash configuration files. That said, a symlink between the files sounds inappropriate, why lose flexibility? Then again, the distinction between logged in and not doesn't seem very impactful now, and so I saw someone try a [single bash script](http://meta.ath0.com/2007/10/23/cleaning-up-bash-customizations/) instead of the two configs files. Mainly, the recommendations from the internet say just source the `~/.bashrc` within the `~/.bash_profile` and put the environment variables, aliases, and others in `~/.bashrc`. That would leave just very specific, run once functions and customizations to a logged in shell script for the `~/.bash_profile`, which currently for me is only a script that tells me what conda env is active. I think the best thing of this approach is that it makes you realize the customizations for bash that are for your ease, and which are absolutely necessary for development. That distinction helps motivate me to do more customizations to help me use bash more effectively.
+
+ To note, on Mac's Terminal.app, the `~/.bash_profile` is sourced every time. 
+
+### Parting thoughts
+Like most things in computer science, bash isn't opinionated and so it is up to me to be. For the time being, I will use the approach I specified (internet approved!) It seems the most clearcut and is supposedly resilient(?) because if I ever switch to Linux, I would only have to change my `~/.bash_profile` to a `~/.profile`. But then again, zsh is now the default shell on Mac. I wonder if it is worth switching?
+
+### Helpful Links
+For why log in vs not in a shell:
+https://unix.stackexchange.com/questions/324359/why-a-login-shell-over-a-non-login-shell
+
+For Log in shell info:
+https://unix.stackexchange.com/questions/38175/difference-between-login-shell-and-non-login-shell
+
+Docs:
+https://www.gnu.org/software/bash/manual/bash.html#Interactive-Shells
