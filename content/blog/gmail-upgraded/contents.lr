@@ -1,0 +1,46 @@
+title: Gmail Sucks
+---
+author: Yash Bhalla
+---
+body:
+
+### Intro
+Gmail **sucks**. Here I am, being *attacked* by email, and Gmail piles on by adding email ads on the top! Well, considering it is a bit of a self made email Hell, I guess I deserve it. Google didn't sign me up for the promo ads from that company I ordered from that one time. Google didn't *actively* make it harder for me to manage email, *like I manage mail*. But without customizations, Gmail seems to have passively facilitated it. Plus, not being able to add custom tabs is so stupid. 
+
+### Motivating Question
+How in the world do I control the email I get? 
+
+### Background
+I use Gmail. I am not a power user. It provides so many benefits that I actually have two accounts (I wonder if that goes against their TOS?). *free*, 15 GB of storage per email account, *free*, integrated with G Suite, *free*, no need to manage updates for my own private email server, and *free*. All those benefits, and all I have to give is my data? Of course I signed up all those years ago! Sadly, I have gained an inkling of email hygiene, and realize that my Gmail is an avalanche of crap. If only Gmail provided me a way to automate it to be clean.... Maybe if I read these 2 books about how to use Gmail I could find a way.....
+
+### Tried Solutions
+I am a recent college grad. I got a CS degree and time. I'm unemployed. My first thought: let's code a solution. Well, my first thought was to Google what others do, look at Gmail settings quickly, finding but not reading 2 how to use Gmail books (really not good idea, they are old and Gmail docs are maintained, if anything I should read the docs).  No obvious solution, and so back to the **CODE!!!!** 
+
+##### Gmail Add-ons
+I found out about Gmail Add-ons. They are developed with this JS based App Script Google uses to allow external developers to extend Gmail. At first, this was a goldmine. I figured I could make a new add on that could solve my problems. This magic add-on would sort my email by importance as defined by me, limit the number of promo emails I get by only keeping the latest X promo emails from the places I subscribe to (hey, sometimes there's a good coupon), show the email newsletters I want to read in the mornings in one place, block those evil pixel long images that TRACK me (privacy first!), and give me the good parts of the paid email clients and the new (hip) [Hey](https://hey.com) email service.
+
+Yeah.... that's not what a Gmail add on is meant to do. They are meant to be 'Cards' that can be opened from the side of the main Gmail UI, that add integrations to external services and let you do more through Gmail. O well.
+
+##### New email client using Gmail as "backend"?
+I am a recent college grad. I got a CS degree and time. I'm unemployed. I want to code. 
+If Gmail Add-ons don't work and I got no money for existing slick email clients, I will build one. Google provides an API for Gmail. It looks like the solution is building a new email client that provides a custom UI that addresses my needs while retaining my Gmail. It is the simplest solution right? Build don't buy! I know React, Google has good docs, I have the time, things look right.
+
+But! What truly is broken in the Gmail UI? The Hangouts and chat tab I have **NEVER** used and don't know how to remove aside, the rest of the UI makes sense. Also, with this new UI, where would I host it? I lose the two-click access to any other G Suite tool. Will it really be as easy as creating a new UI to solve my issues with Gmail? 
+
+Hmmmm, well what I need is multiple inboxes. Each one gets a specific subset of emails I get. Each inbox has specific rules (like delete if there are more than X emails from Y email address). While I am at it, disable images by default, who needs them?  Only totally new emails should be in the main Inbox, where I can quickly look and determine where to put the email and others like it. Maybe color the email depending on its type. Create a place where attachments live outside of their emails too, that's a useful feature of new messaging apps. This doesn't sound too hard. Let me just check if there really isn't a way I can do this in Gmail.
+
+##### Back to settings
+Settings -> Inbox Type -> Multiple Inboxes
+Create Filter 
+
+Dammit! Gmail already has the tools I need. Well, it is a good thing, now I don't have to spend the next week (at least) developing an email prototype that will likely be very similar to Gmail, especially with Gmail with Multiple Inboxes and custom Filters and Labels. While I am at it, let me make the theme something different. I still don't see a way to set an auto-delete policy on emails. But the moving emails into helpful piles is really useful. And the multiple inboxes I can collapse when needed, and control how many emails show up in the main webpage of Gmail per inbox, should work.
+
+### Recommendation
+For my specific problem, I just had to dig into the settings of Gmail. I recommend it. Its fast (took minutes not days) and relatively easy/simple to do. It made me consider the types of emails I receive, revisit if I still want to receive them, and consider the benefits of allowing as much customization as possible when developing a UI but still being opinionated to quickstart. Developing an email UI would be really cool, but it may not be the best use of my time. I wish Gmail had an auto delete option and then it really would solve my problems. But I guess Archiving and sorting emails automatically with Gmail Filters and labels will work for now. Maybe there is another buried setting I need to find that solves this. 
+
+### Helpful links
+Duh: www.google.com
+---
+pub_date: 2020-09-08
+---
+summary: I am overwhelmed by email. I get way too much that is unnecessary, and the few that are important are buried deep enough that I can't find them. I realize the problem is Gmail's Inbox.
