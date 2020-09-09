@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang='en'>
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Learn more about Yash Bhalla">
+    <!-- reset style first -->
+    <link rel="stylesheet" href="../../static/style_reset.css?h=5fa4f471">
+    <!-- add bootstrap and font awesome stylings -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" 
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      type="text/css">
+    
+    <!-- add your own style -->
+    <link rel="stylesheet" href="../../static/style.css?h=6021ce72">
+
+    <!-- Different title per page -->
+    <title>Gmail Sucks </title>
+  </head>
+
+  <body class="d-flex flex-column min-vh-100">
+    <header>
+      <nav class="navbar navbar-collapse navbar-expand-md navbar-dark bg-dark">
+        <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-stretch" id="navbarSupportedContent">
+            <ul class="navbar-nav nav">
+              <!-- == is not an error. It is the logical equals sign. -->
+              <li  class="nav-item" >
+                <a class="nav-link text-custom" href="../../">Home</a>
+              </li>
+              
+              <li  class="nav-item active" >
+                <a class="nav-link text-custom" href="/blog">Blog</a>
+              </li>
+              
+              <li  class="nav-item" >
+                <a class="nav-link text-custom" href="/projects">Projects</a>
+              </li>
+              
+              <li  class="nav-item" >
+                <a class="nav-link text-custom" href="/book_reviews">Book Reviews</a>
+              </li>
+              
+            </ul>
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item" id="theme-toggle" onclick="modeSwitcher()">
+                <a class="nav-link text-custom" href="./" id="theme-toggle" onclick="modeSwitcher()">Dark Mode</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class="page">
+      <!-- Child Template block -->
+      
+  
+<div class="post">
+  
+    
+<div class="blog-metadata">
+  
+    <h2>Gmail Sucks</h2>
+  
+
+  <p>
+    Author: Yash Bhalla   |   
+    Date written: 2020-09-08
+  </p>
+  <hr>
+</div>
+
+  
+
+  <h3>Intro</h3>
+<p>Gmail <strong>sucks</strong>. Here I am, being <em>attacked</em> by email, and Gmail piles on by adding email ads on the top! Well, considering it is a bit of a self made email Hell, I guess I deserve it. Google didn't sign me up for the promo ads from that company I ordered from that one time. Google didn't <em>actively</em> make it harder for me to manage email, <em>like I manage mail</em>. But without customizations, Gmail seems to have passively facilitated it. Plus, not being able to add custom tabs is so stupid.</p>
+<h3>Motivating Question</h3>
+<p>How in the world do I control the email I get?</p>
+<h3>Background</h3>
+<p>I use Gmail. I am not a power user. It provides so many benefits that I actually have two accounts (I wonder if that goes against their TOS?). <em>free</em>, 15 GB of storage per email account, <em>free</em>, integrated with G Suite, <em>free</em>, no need to manage updates for my own private email server, and <em>free</em>. All those benefits, and all I have to give is my data? Of course I signed up all those years ago! Sadly, I have gained an inkling of email hygiene, and realize that my Gmail is an avalanche of crap. If only Gmail provided me a way to automate it to be clean.... Maybe if I read these 2 books about how to use Gmail I could find a way.....</p>
+<h3>Tried Solutions</h3>
+<p>I am a recent college grad. I got a CS degree and time. I'm unemployed. My first thought: let's code a solution. Well, my first thought was to Google what others do, look at Gmail settings quickly, finding but not reading 2 how to use Gmail books (really not good idea, they are old and Gmail docs are maintained, if anything I should read the docs).  No obvious solution, and so back to the <strong>CODE!!!!</strong></p>
+<h5>Gmail Add-ons</h5>
+<p>I found out about Gmail Add-ons. They are developed with this JS based App Script Google uses to allow external developers to extend Gmail. At first, this was a goldmine. I figured I could make a new add on that could solve my problems. This magic add-on would sort my email by importance as defined by me, limit the number of promo emails I get by only keeping the latest X promo emails from the places I subscribe to (hey, sometimes there's a good coupon), show the email newsletters I want to read in the mornings in one place, block those evil pixel long images that TRACK me (privacy first!), and give me the good parts of the paid email clients and the new (hip) <a href="https://hey.com">Hey</a> email service.</p>
+<p>Yeah.... that's not what a Gmail add on is meant to do. They are meant to be 'Cards' that can be opened from the side of the main Gmail UI, that add integrations to external services and let you do more through Gmail. O well.</p>
+<h5>New email client using Gmail as "backend"?</h5>
+<p>I am a recent college grad. I got a CS degree and time. I'm unemployed. I want to code. 
+If Gmail Add-ons don't work and I got no money for existing slick email clients, I will build one. Google provides an API for Gmail. It looks like the solution is building a new email client that provides a custom UI that addresses my needs while retaining my Gmail. It is the simplest solution right? Build don't buy! I know React, Google has good docs, I have the time, things look right.</p>
+<p>But! What truly is broken in the Gmail UI? The Hangouts and chat tab I have <strong>NEVER</strong> used and don't know how to remove aside, the rest of the UI makes sense. Also, with this new UI, where would I host it? I lose the two-click access to any other G Suite tool. Will it really be as easy as creating a new UI to solve my issues with Gmail?</p>
+<p>Hmmmm, well what I need is multiple inboxes. Each one gets a specific subset of emails I get. Each inbox has specific rules (like delete if there are more than X emails from Y email address). While I am at it, disable images by default, who needs them?  Only totally new emails should be in the main Inbox, where I can quickly look and determine where to put the email and others like it. Maybe color the email depending on its type. Create a place where attachments live outside of their emails too, that's a useful feature of new messaging apps. This doesn't sound too hard. Let me just check if there really isn't a way I can do this in Gmail.</p>
+<h5>Back to settings</h5>
+<p>Settings -&gt; Inbox Type -&gt; Multiple Inboxes
+Create Filter</p>
+<p>Dammit! Gmail already has the tools I need. Well, it is a good thing, now I don't have to spend the next week (at least) developing an email prototype that will likely be very similar to Gmail, especially with Gmail with Multiple Inboxes and custom Filters and Labels. While I am at it, let me make the theme something different. I still don't see a way to set an auto-delete policy on emails. But the moving emails into helpful piles is really useful. And the multiple inboxes I can collapse when needed, and control how many emails show up in the main webpage of Gmail per inbox, should work.</p>
+<h3>Recommendation</h3>
+<p>For my specific problem, I just had to dig into the settings of Gmail. I recommend it. Its fast (took minutes not days) and relatively easy/simple to do. It made me consider the types of emails I receive, revisit if I still want to receive them, and consider the benefits of allowing as much customization as possible when developing a UI but still being opinionated to quickstart. Developing an email UI would be really cool, but it may not be the best use of my time. I wish Gmail had an auto delete option and then it really would solve my problems. But I guess Archiving and sorting emails automatically with Gmail Filters and labels will work for now. Maybe there is another buried setting I need to find that solves this.</p>
+<h3>Helpful links</h3>
+<p>Duh: www.google.com</p>
+
+</div>
+
+
+    </div>
+
+
+    <footer class="page-footer footer mt-auto">
+      <nav class="navbar navbar-collapse navbar-expand-md navbar-dark bg-dark">
+        <!-- out of div tag to align left when collapsed -->
+        <div class="container-fluid">
+        <button class="navbar-toggler text-left" type="button" data-toggle="collapse" data-target="#footer-elements" aria-controls="footer-elements" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="mx-auto justify-content-stretch">
+          <!-- Social Element Icons -->
+          <div class="collapse navbar-collapse" id="footer-elements">
+            <ul class="navbar-nav">
+              
+                <li class="list-inline-item">
+                  <a href="https://github.com/bhallaY" title="@bhallaY on GitHub" rel="external">
+                    <i class="fa fa-2x fa-github fa-element"></i>
+                  </a>
+                </li>
+              
+                <li class="list-inline-item">
+                  <a href="https://www.linkedin.com/in/yashbhalla636a55126" title="Yash Bhalla on Linkedin" rel="external">
+                    <i class="fa fa-2x fa-linkedin fa-element"></i>
+                  </a>
+                </li>
+              
+                <li class="list-inline-item">
+                  <a href="mailto:bhalla.yash98@gmail.com" title="Email me!" rel="external">
+                    <i class="fa fa-2x fa-paper-plane fa-element"></i>
+                  </a>
+                </li>
+              
+            </ul>
+          </div>
+        </div>
+      </div>
+      </nav>
+    </footer>
+
+    <!-- Script for Light/Dark mode -->
+    <script src="/assets/scripts/mode-switcher.js" crossorigin="anonymous"></script>
+    <!-- Bootstrap javascript imports -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" 
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" 
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" 
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  </body>
+
+</html>

@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang='en'>
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Learn more about Yash Bhalla">
+    <!-- reset style first -->
+    <link rel="stylesheet" href="../../static/style_reset.css?h=5fa4f471">
+    <!-- add bootstrap and font awesome stylings -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" 
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      type="text/css">
+    
+    <!-- add your own style -->
+    <link rel="stylesheet" href="../../static/style.css?h=6021ce72">
+
+    <!-- Different title per page -->
+    <title>Bash Files setup </title>
+  </head>
+
+  <body class="d-flex flex-column min-vh-100">
+    <header>
+      <nav class="navbar navbar-collapse navbar-expand-md navbar-dark bg-dark">
+        <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-stretch" id="navbarSupportedContent">
+            <ul class="navbar-nav nav">
+              <!-- == is not an error. It is the logical equals sign. -->
+              <li  class="nav-item" >
+                <a class="nav-link text-custom" href="../../">Home</a>
+              </li>
+              
+              <li  class="nav-item active" >
+                <a class="nav-link text-custom" href="/blog">Blog</a>
+              </li>
+              
+              <li  class="nav-item" >
+                <a class="nav-link text-custom" href="/projects">Projects</a>
+              </li>
+              
+              <li  class="nav-item" >
+                <a class="nav-link text-custom" href="/book_reviews">Book Reviews</a>
+              </li>
+              
+            </ul>
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item" id="theme-toggle" onclick="modeSwitcher()">
+                <a class="nav-link text-custom" href="./" id="theme-toggle" onclick="modeSwitcher()">Dark Mode</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class="page">
+      <!-- Child Template block -->
+      
+  
+<div class="post">
+  
+    
+<div class="blog-metadata">
+  
+    <h2>Bash Files setup</h2>
+  
+
+  <p>
+    Author: Yash Bhalla   |   
+    Date written: 2020-09-08
+  </p>
+  <hr>
+</div>
+
+  
+
+  <h3>Background</h3>
+<p>Recently, I have wanted to explore what Docker has to offer. I have used it before with simple Dockerfiles and know about containers, but I had never really done a deep dive. About five minutes in, I read about how to add docker completion to the bash shell. This led me to realize I don't know much about Bash, except that it's a Unix shell and how to run basic commands in it. I didn't know about <code>bash-completion</code>, and it seems like a <strong>very</strong> useful tool. I came to the conclusion that it is worth exploring Bash further and trying to customize it to help me work more efficiently. To that effect, I am starting with the basics: exploring the differences between the config files <code>~/.bash_profile</code> and <code>~/.bashrc</code>.</p>
+<h3>Motivating Question</h3>
+<p>What are the differences between <code>~/.bash_profile</code> and <code>~/.bashrc</code>? How does that affect where to put $PATH variables, keyboard shortcuts, other bash related files (as in files containing bash aliases) and any other config related to bash?</p>
+<h3>Personal Context</h3>
+<p>I use Bash because it was the default shell when I got my laptop (circa 2014). It seems one can learn as much (or little) as they want to develop software, and I chose to just learn the basics for my shell until now. When looking through my <code>~/.bash_profile</code> and <code>~/.bashrc</code> files I realized they are a mess and I didn't know how to clean them up. Luckily, the docs were good, and other engineers had translated them into more digestible lingo.</p>
+<h3>Config Files</h3>
+<p>Bash can be run a few different ways, or modes. It can be interactive or not, and logged in or not. I think a lot of the particulars stem from the time period the shell was developed and these design decisions have just stayed. Anyways, interactive mode means that the shell can read and write to a user's terminal and non interactive is not associated with a terminal. Logged in mode  means that you put your user credentials and are signed in with user ID. Having a Mac, I didn't realize a shell could be run without being logged in (Terminal.app starts a logged in interactive shell every time). The different modes have different starting config files they run. A logged in shell, interactive or not first executes <code>/etc/profile</code> (global shell specific config) if it exists and then looks for a <code>.bash_profile</code> (and if not exist, then a <code>~/.bash_login</code> and a <code>~/.profile</code>).  An interactive non-login shell executes a <code>~/.bashrc</code>. I bet a non-interactive non-login shell does too, but I couldn't find a mention of that, though it is used mainly to execute bash scripts.</p>
+<h3>My Practices</h3>
+<p>Currently, I do nothing that I believe needs to take advantage of the different bash configuration files. That said, a symlink between the files sounds inappropriate, why lose flexibility? Then again, the distinction between logged in and not doesn't seem very impactful now, and so I saw someone try a <a href="http://meta.ath0.com/2007/10/23/cleaning-up-bash-customizations/">single bash script</a> instead of the two configs files. Mainly, the recommendations from the internet say just source the <code>~/.bashrc</code> within the <code>~/.bash_profile</code> and put the environment variables, aliases, and others in <code>~/.bashrc</code>. That would leave just very specific, run once functions and customizations to a logged in shell script for the <code>~/.bash_profile</code>, which currently for me is only a script that tells me what conda env is active. I think the best thing of this approach is that it makes you realize the customizations for bash that are for your ease, and which are absolutely necessary for development. That distinction helps motivate me to do more customizations to help me use bash more effectively.</p>
+<p>To note, on Mac's Terminal.app, the <code>~/.bash_profile</code> is sourced every time.</p>
+<h3>Parting thoughts</h3>
+<p>Like most things in computer science, bash isn't opinionated and so it is up to me to be. For the time being, I will use the approach I specified (internet approved!) It seems the most clearcut and is supposedly resilient(?) because if I ever switch to Linux, I would only have to change my <code>~/.bash_profile</code> to a <code>~/.profile</code>. But then again, zsh is now the default shell on Mac. I wonder if it is worth switching?</p>
+<h3>Helpful Links</h3>
+<p>For why log in vs not in a shell:
+<a href="https://unix.stackexchange.com/questions/324359/why-a-login-shell-over-a-non-login-shell">https://unix.stackexchange.com/questions/324359/why-a-login-shell-over-a-non-login-shell</a></p>
+<p>For Log in shell info:
+<a href="https://unix.stackexchange.com/questions/38175/difference-between-login-shell-and-non-login-shell">https://unix.stackexchange.com/questions/38175/difference-between-login-shell-and-non-login-shell</a></p>
+<p>Docs:
+<a href="https://www.gnu.org/software/bash/manual/bash.html#Interactive-Shells">https://www.gnu.org/software/bash/manual/bash.html#Interactive-Shells</a></p>
+
+</div>
+
+
+    </div>
+
+
+    <footer class="page-footer footer mt-auto">
+      <nav class="navbar navbar-collapse navbar-expand-md navbar-dark bg-dark">
+        <!-- out of div tag to align left when collapsed -->
+        <div class="container-fluid">
+        <button class="navbar-toggler text-left" type="button" data-toggle="collapse" data-target="#footer-elements" aria-controls="footer-elements" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="mx-auto justify-content-stretch">
+          <!-- Social Element Icons -->
+          <div class="collapse navbar-collapse" id="footer-elements">
+            <ul class="navbar-nav">
+              
+                <li class="list-inline-item">
+                  <a href="https://github.com/bhallaY" title="@bhallaY on GitHub" rel="external">
+                    <i class="fa fa-2x fa-github fa-element"></i>
+                  </a>
+                </li>
+              
+                <li class="list-inline-item">
+                  <a href="https://www.linkedin.com/in/yashbhalla636a55126" title="Yash Bhalla on Linkedin" rel="external">
+                    <i class="fa fa-2x fa-linkedin fa-element"></i>
+                  </a>
+                </li>
+              
+                <li class="list-inline-item">
+                  <a href="mailto:bhalla.yash98@gmail.com" title="Email me!" rel="external">
+                    <i class="fa fa-2x fa-paper-plane fa-element"></i>
+                  </a>
+                </li>
+              
+            </ul>
+          </div>
+        </div>
+      </div>
+      </nav>
+    </footer>
+
+    <!-- Script for Light/Dark mode -->
+    <script src="/assets/scripts/mode-switcher.js" crossorigin="anonymous"></script>
+    <!-- Bootstrap javascript imports -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" 
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" 
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" 
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  </body>
+
+</html>
