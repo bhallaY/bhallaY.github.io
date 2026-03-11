@@ -1,0 +1,18 @@
+---
+layout: "base.njk"
+title: Blog Posts
+eleventyNavigation:
+  key: Blog
+---
+<h1>Posts:</h1>
+
+
+{% set blogpostslist = collections.posts %}
+<ol reversed class="blogpostslist">
+{% for post in blogpostslist | reverse %}
+	<li class="postlist-item{% if post.url == url %} postlist-item-active{% endif %}">
+		<a href="{{ post.url }}" class="postlist-link">{% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</a>
+		<time class="postlist-date" datetime="{{ post.date | machineReadableDate }}">{{ post.date | humanReadableDate }}</time>
+	</li>
+{% endfor %}
+</ol>

@@ -1,0 +1,9 @@
+---
+layout: "base.njk"
+---
+
+<article class="article">
+    <h1 class="article-title">{{ title }}</h1>
+    <p class="article-meta">Author: Yash Bhalla | <span>Written on: {{ page.date | humanReadableDate }}</span> </p>
+     {{ content | safe }}
+</article>

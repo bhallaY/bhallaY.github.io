@@ -1,0 +1,21 @@
+{
+  "type": "module",
+  "scripts": {
+    "build": "npx @11ty/eleventy",
+    "build:production": "NODE_ENV=production npx @11ty/eleventy",
+    "build:clean": "rm -r public && npx @11ty/eleventy",
+    "debug": "Eleventy* npx @11ty/eleventy",
+    "start": "npx @11ty/eleventy --serve --quiet",
+    "start:debug": "DEBUG=Eleventy* npx @11ty/eleventy --serve --quiet"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.2",
+    "@11ty/eleventy-navigation": "^0.3.5",
+    "luxon": "^3.3.0"
+  },
+  "dependencies": {
+    "@11ty/eleventy-img": "^6.0.4",
+    "nunjucks": "^3.2.3",
+    "papercss": "^1.9.1"
+  }
+}
