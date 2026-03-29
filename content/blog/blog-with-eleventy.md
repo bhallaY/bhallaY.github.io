@@ -1,7 +1,6 @@
 ---
 title: Rebuild with Eleventy
 tags: posts
-modified_date: "Last Modified" #does nothing for now. Write date plugin for formatting
 ---
 
 ### Guiding Question

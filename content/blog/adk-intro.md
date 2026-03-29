@@ -1,7 +1,6 @@
 ---
 title: Understanding the ADK
 tags: posts
-modified_date: "Last Modified" #does nothing for now. Write date plugin for formatting
 ---
 
 ### Guiding question
